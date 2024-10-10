@@ -1,0 +1,15 @@
+Git Hub Repo set in VS code:--
+
+git init
+
+git add .
+
+git commit -m "msg"
+
+git remote add origin https://github.com/Ashvin424/XRentals.git
+
+git branch  //check branch
+
+git branch -M main  //change branch to main
+
+git push origin main
