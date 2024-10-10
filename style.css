@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* universal */
+*{
+    font-family: 'Poppins',sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+    list-style: none;
+    text-decoration: none; 
+   
+}
+/* for hide scroll bar */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* declaration od global variable */
+:root{
+    --main-color:#2288ff;
+    --secondary-color:#192f6a;
+    --text-color:#314862;
+    --bg-color:#fff;
+
+    --box-shadow:2px 2px 18px rgb(14 52 54 / 15%);
+
+}
+
+/* css for navigation */
+header{
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0.5em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    margin-bottom: 50px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    
+}
+nav ul {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    display: flex;
+}
+nav li {
+    margin-right: 20px;
+}
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+nav a:hover {
+    color: #ccc;
+}
+
+
+.logIn{
+    padding: 8px 12px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 5rem;
+    font-size: 0.75vw;
+    text-align: center;
+    height: 5vh;
+    border: none;
+    box-shadow: 0 2px 0px 0px #164173;
+}
+button:active{
+    background-color: #3492fd;
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+.logo {
+    height: 50px;
+    margin-left: 2%;
+    
+}
+
+/* text color for body */
+body{
+    color: var(--text-color);
+}
+
+/* css for main container */
+.container{
+    background-image: url('container_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: start;
+    color: var(--text-color);
+    border-radius: 25px;
+    font-size: 1vi;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-bottom: 100px;
+}
+
+.quote{
+    font-size: 2vw;
+}
+
+/* css for sign up button */
+.signUp{
+    padding: 8px 12px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 5rem;
+    font-size: 0.75vw;
+    text-align: center;
+    height: 5vh;
+    width:fit-content;
+    border: none;
+    box-shadow: 0 2px 0px 0px #164173;
+}
+
+
+.inner_container{
+    margin-left: 5%;
+}
+
+/* css for about us div */
+#bg, #about_text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#bg{
+    background-image: url('About_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 35vh;
+    width: 35vw;
+    margin-left: 10.5vi;
+    border-radius: 25px 0px 25px 25px / 25px 0px 25px 25px ;
+    margin-bottom: 50px;
+}
+
+#about_text{
+    height: 35vh;
+    width: 35vw;
+    margin-right: 10.5vi;
+    margin-left: 5vi;
+    text-align: justify;
+    overflow: scroll;
+}
+#about_text p{
+    font-size: 1rem;
+}
+
+.image{
+    height: 10%;
+    width: 10%;
+}
+
+.featured_rooms{
+    height: 50vh;
+    width: 80vw;
+    margin-left: 10.5vi;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text{
+    align-items: center;
+    text-align: center;
+}
+
+.h5{
+    color: #929494;
+}
+
+#room_1, #room_2, #room_3 {
+    display: inline-block;
+}
+.rooms {
+    height: 55vh;
+    width: 22vw;
+    margin: 2vi;
+    border-radius: 5%;
+    padding: 0.7vi;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: bottom 0.3s ease-in-out;
+}
+
+#img_room_1{
+    background-image: url(images/ex_room_1.jpg);
+}
+#img_room_2{
+    background-image: url(images/ex_room_2.jpg);
+}
+#img_room_3{
+    background-image: url(images/ex_room_3.jpg);
+}
+
+.image{
+    height: 40vh;
+    width: 100%;
+    background-image: url(/images/ex_room_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    margin: auto;
+    border-radius: 5%;
+    box-sizing: border-box;
+}
+
+.rooms:hover{
+    position: relative;
+    bottom: 2%;
+}
+
+.info{
+    padding: 1vi;
+}
+
+.prize{
+    display: flex;
+    justify-content: end;
+    text-align: end;
+}
+
+.location{
+    margin-bottom: 1vi;
+    color: #929494;
+    font-size: small;
+}
+
+/* footer */
+.footer {
+    background-color: #2288ff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    width: 25%;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-section a:hover {
+    color: #666;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-top: 20px;
+}
