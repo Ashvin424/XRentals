@@ -200,7 +200,8 @@ body{
     border-radius: 5%;
     padding: 0.7vi;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    transition: bottom 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
+    
 }
 
 #img_room_1{
@@ -225,6 +226,24 @@ body{
     box-sizing: border-box;
 }
 
+
+.viewMore{
+    justify-content: center;
+    justify-self: center;
+    padding: 8px 12px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 5rem;
+    font-size: 0.75vw;
+    text-align: center;
+    height: 5vh;
+    width:fit-content;
+    border: none;
+    box-shadow: 0 2px 0px 0px #164173;
+    display: block;
+    margin: auto;
+}
+
 .rooms:hover{
     position: relative;
     bottom: 2%;
@@ -232,6 +251,7 @@ body{
 
 .info{
     padding: 1vi;
+    
 }
 
 .prize{
