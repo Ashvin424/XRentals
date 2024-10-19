@@ -32,6 +32,7 @@
 header{
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 nav {
@@ -59,8 +60,10 @@ nav li {
 nav a {
     color: var(--text-color);
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 nav a:hover {
+    font-size: large;
     color: #ccc;
 }
 
@@ -112,6 +115,7 @@ body{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     margin-bottom: 100px;
 }
+
 
 .quote{
     font-size: 2vw;
@@ -194,14 +198,19 @@ body{
     display: inline-block;
 }
 .rooms {
-    height: 55vh;
-    width: 22vw;
+    height: 57vh;
+    width: 23vw;
     margin: 2vi;
     border-radius: 5%;
     padding: 0.7vi;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    transition: all 1s ease-in-out;
+    transition: all 0.2s ease-in-out;
     
+}
+.rooms:hover{
+    position: relative;
+    height: 59vh;
+    width: 24vw;
 }
 
 #img_room_1{
@@ -215,9 +224,8 @@ body{
 }
 
 .image{
-    height: 40vh;
+    height: 72%;
     width: 100%;
-    background-image: url(/images/ex_room_1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
@@ -244,10 +252,6 @@ body{
     margin: auto;
 }
 
-.rooms:hover{
-    position: relative;
-    bottom: 2%;
-}
 
 .info{
     padding: 1vi;
@@ -314,4 +318,87 @@ body{
     font-size: 14px;
     color: #999;
     margin-top: 20px;
+}
+
+/* Contact Us Page CSS */
+
+.main{
+    display: flex;
+    margin: 0px 5% 50px 5%;
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.main .contactUs_form .contactUs_logo img{
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 50%;
+}
+a,button:hover{
+    cursor: pointer;
+}
+
+.contactUs_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactUs_form{
+    padding: 5%;
+    font-size: 1vw;
+}
+
+
+fieldset {
+    border: none;
+    height: 10vh;
+    width: 30vw;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset input[type="text"], fieldset input[type="email"], fieldset input[type="tel"], fieldset textarea {
+    width: 30vw;
+    height: 5.5vh;   
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+fieldset #message{
+    height: inherit;
+}
+
+fieldset textarea {
+    resize: none;
+}
+.send_message_btn{
+    padding: 8px 12px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    font-size: 0.75vw;
+    text-align: center;
+    height: 5vh;
+    width: 30vw;
+    border: none;
+    box-shadow: 0 2px 0px 0px #164173;
+}
+.main h5{
+    text-align: center;
+}
+
+.anim{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+
+@keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

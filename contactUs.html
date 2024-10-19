@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | XRentals</title>
+    <link rel="icon" type="image/x-icon" href="logo/head_logo.png">
+        <link rel="stylesheet" href="style.css">
+        <!-- Icons -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm;/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <img src="logo/logo.png" alt="XRentals Logo" class="logo" onclick="location.href='index.html'">
+            <ul>
+                <li><a href="index.html" class="nav-link" id="home">Home</a></li>
+                <li><a href="list_your_room.html" class="nav-link" id="about">List-Your-Room</a></li>
+                <li><a href="rooms.html" class="nav-link"
+                        id="rooms">Listed Rooms</a></li>
+                <li><a href="contactUs.html" class="nav-link"
+                        id="contact">Contact</a></li>
+            </ul>
+            <button name="logIn" class="logIn"
+                onclick="location.href='login_page.html'">Log
+                In<inp></inp></button>
+        </nav>
+    </header>
+    <div class="main anim">
+        <div class="contactUs_form">
+            <div class="contactUs_logo">
+                <img src="./logo/contactUs.png" alt="Contact Us" class="anim"><br>
+                <h2 class="anim">Contact Us</h2>
+            </div>
+            <div class="form">
+                <form action="" class="anim">
+                    <fieldset class="anim">
+                        <legend>Name*</legend>
+                        <input type="text" name="name" id="name" placeholder="Name*" required>
+                    </fieldset>
+                    <fieldset class="anim">
+                        <legend>Email*</legend>
+                        <input type="email" name="email" id="email" placeholder="Email*" required>
+                    </fieldset>
+                    <fieldset class="anim">
+                        <legend>Phone Number</legend>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+                    </fieldset>
+                    <fieldset class="anim">
+                        <legend>Message*</legend>
+                        <textarea name="message" id="message" placeholder="Message*" required></textarea>
+                    </fieldset><br><br>
+                    <button class="send_message_btn" id="contact_us_btn" onclick="sendMessage()">Send Message</button>
+                </form><br>
+                <h5 class="anim">For any queries, please write to us on <a href="mailto:pashvin6665@gmail.com">contact@xrentals.in</a></h5>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="list_your_room.html">List-Your-Rooms</a></li>
+                    <li><a href="rooms.html">Listed Rooms</a></li>
+                    <li><a href="contactUs.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#" class="bx bxl-facebook"><img src="logo/facebook-circle-logo-24.png" alt=""></a></li>
+                    <li><a href="#" class="bx bxl-twitter"><img src="logo/twitter-logo-24.png" alt=""></a></li>
+                    <li><a href="#" class="bx bxl-instagram"><img src="logo/instagram-logo-24.png" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Get in Touch</h3>
+                <p>Address: XYZ Street, Bhavnagar, India</p>
+                <p>Phone: +91 1234567890</p>
+                <p>Email: <a href="mailto:info@xrentals.com">info@xrentals.com</a></p>
+            </div>
+        </div>
+        <p class="copyright">Copyright &copy; 2023 XRentals. All rights reserved.</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

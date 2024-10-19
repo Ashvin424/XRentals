@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Room Listing</title>
+        <link rel="stylesheet" href="list_your_room.css">
+        <link rel="icon" type="image/x-icon" href="logo/head_logo.png">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img src="logo/logo.png" alt="XRentals Logo" class="logo"
+                    onclick="location.href='index.html'">
+                <ul>
+                    <li><a href="index.html" class="nav-link" id="home">Home</a></li>
+                    <li><a href="list_your_room.html" class="nav-link"
+                            id="about">List-Your-Room</a></li>
+                    <li><a href="rooms.html" class="nav-link"
+                            id="rooms">Listed Rooms</a></li>
+                    <li><a href="contactUs.html" class="nav-link"
+                            id="contact">Contact</a></li>
+                </ul>
+                <button name="logIn" class="logIn"
+                    onclick="location.href='login_page.html'">Log
+                    In<inp></inp></button>
+            </nav>
+        </header>
+        <form id="roomListingForm" class="anim">
+
+            <!-- Step 1: Room Details -->
+            <div class="form-step anim" id="step-1">
+                <h2 class="txt anim">Room Details</h2>
+                <label for="roomTitle" class="anim">Room Title</label>
+                <input type="text" id="roomTitle" class="anim" name="roomTitle"
+                    placeholder="Spacious Room with Balcony" required>
+
+                <label for="roomType" class="anim">Room Type</label>
+                <select id="roomType" class="anim" name="roomType" required>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="shared">Shared</option>
+                </select>
+
+                <label for="roomLocation" class="anim">Location</label>
+                <input type="text" id="roomLocation" name="roomLocation" class="anim"
+                    placeholder="Enter room address" required>
+
+                <label for="roomDescription" class="anim">Room Description</label>
+                <textarea id="roomDescription" class="anim" name="roomDescription"
+                    placeholder="Describe the room features, lighting, etc."
+                    required></textarea>
+                <div class="button-container anim">
+                    <button type="button" class="next-btn anim"
+                        onclick="nextStep(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Rent Details -->
+            <div class="form-step anim" id="step-2" style="display:none;">
+                <h2 class="anim">Rent Details</h2>
+                <label for="rentAmount" class="anim">Rent Amount</label>
+                <input type="number" id="rentAmount" class="anim" name="rentAmount"
+                    value="6000" placeholder="Enter Your Amount" required>
+
+                <label for="securityDeposit" class="anim">Security Deposit</label>
+                <input type="number" class="anim" id="securityDeposit"
+                    name="securityDeposit" placeholder="Enter Your Amount"
+                    required>
+
+                <label for="leaseTerm" class="anim">Lease Term</label>
+                <select id="leaseTerm" class="anim" name="leaseTerm">
+                    <option value="6months">6 Months</option>
+                    <option value="12months">12 Months</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+
+                <label for="availableDate" class="anim">Available From</label>
+                <input type="date" id="availableDate" class="anim" name="availableDate">
+                <div class="button-container">
+                    <button type="button" class="prev-btn anim"
+                        onclick="prevStep(1)">Back</button>
+                    <button type="button" class="next-btn anim"
+                        onclick="nextStep(2)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Upload Photos & Videos -->
+            <div class="form-step anim" id="step-3" style="display:none;">
+                <h2 class="anim">Room Photos & Videos</h2>
+                <label for="photos" class="anim">Upload Photos</label>
+                <input type="file" class="anim" id="photos" name="photos"
+                    accept="image/*" multiple required><br>
+
+                <label for="video" class="anim">Upload Video</label>
+                <input type="file" class="anim" id="video" name="video" accept="video/*">
+
+                <button type="button" class="prev-btn anim"
+                    onclick="prevStep(2)">Back</button>
+                <button type="button" class="next-btn anim"
+                    onclick="nextStep(3)">Next</button>
+            </div>
+
+            <!-- Step 4: Amenities & Rules -->
+            <div class="form-step anim" id="step-4" style="display:none;">
+                <h2 class="anim">Amenities & Rules</h2>
+                <label class="anim">Amenities</label>
+                <div class="checkbox-group anim">
+                    <label><input type="checkbox" name="amenities"
+                            value="wifi"> Wi-Fi</label>
+                    <label><input type="checkbox" name="amenities"
+                            value="parking"> Parking</label>
+                    <label><input type="checkbox" name="amenities"
+                            value="heating"> Heating</label>
+                    <label><input type="checkbox" name="amenities"
+                            value="ac"> Air Conditioning</label>
+                </div>
+                <br><br>
+                <label class="anim">House Rules</label>
+                <div class="checkbox-group anim">
+                    <label><input type="checkbox" name="rules"
+                            value="nosmoking"> No Smoking</label>
+                    <label><input type="checkbox" name="rules"
+                            value="petsallowed"> Pets Allowed</label>
+                    <label><input type="checkbox" name="rules"
+                            value="noparties"> No Parties</label>
+                    <label><input type="checkbox" name="rules"
+                            value="quiethours"> Quiet Hours</label>
+                </div>
+
+                <button type="button" class="prev-btn anim"
+                    onclick="prevStep(3)">Back</button>
+                <button type="button" class="next-btn anim"
+                    onclick="nextStep(4)">Next</button>
+            </div>
+
+            <!-- Step 5: Contact Information -->
+            <div class="form-step anim" id="step-5" style="display:none;">
+                <h2 class="amin">Contact Information</h2>
+                <label for="fullName" class="amin">Your Name</label>
+                <input type="text" class="amin" id="fullName" name="fullName" required>
+
+                <label for="email" class="amin">Email Address</label>
+                <input type="email" class="amin" id="email" name="email" required>
+
+                <label for="phoneNumber" class="amin">Phone Number</label>
+                <input type="tel" class="amin" id="phoneNumber" name="phoneNumber"
+                    required>
+
+                <button type="button" class="prev-btn anim"
+                    onclick="prevStep(4)">Back</button>
+                <button type="submit" class="submit anim">Publish</button>
+            </div>
+
+        </form>
+
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Join us at XRentals, where your next home awaits. Discover a world of possibilities and let us help you find the perfect place to live</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">List-Your-Rooms</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="contactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#" class="bx bxl-facebook"><img src="logo/facebook-circle-logo-24.png" alt=""></a></li>
+                        <li><a href="#" class="bx bxl-twitter"><img src="logo/twitter-logo-24.png" alt=""></a></li>
+                        <li><a href="#" class="bx bxl-instagram"><img src="logo/instagram-logo-24.png" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <p>Address: XYZ Street, Bhavnagar, India</p>
+                    <p>Phone: <a href="tel:1234567890">+91 1234567890</a></p>
+                    <p>Email: <a href="mailto:info@xrentals.com">info@xrentals.com</a></p>
+                </div>
+            </div>
+            <p class="copyright">Copyright &copy; 2023 XRentals. All rights reserved.</p>
+        </div>
+
+        <script>
+        let currentStep = 1;
+
+        function nextStep(step) {
+    const currentFormStep = document.getElementById(`step-${step}`);
+    const inputs = currentFormStep.querySelectorAll('input, select, textarea');
+    let allFilled = true;
+
+    // Check if all required fields are filled
+    inputs.forEach((input) => {
+        if (input.hasAttribute('required') && !input.value) {
+            allFilled = false;
+        }
+    });
+
+    if (allFilled) {
+        document.getElementById(`step-${step}`).style.display = 'none';
+        document.getElementById(`step-${step + 1}`).style.display = 'block';
+    } else {
+        alert("Please fill out all required fields before proceeding.");
+    }
+}
+
+function prevStep(step) {
+    document.getElementById(`step-${step + 1}`).style.display = 'none';
+    document.getElementById(`step-${step}`).style.display = 'block';
+}
+
+        document.getElementById('roomListingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Your room listing has been published!");
+        });
+    </script>
+
+    </body>
+</html>
