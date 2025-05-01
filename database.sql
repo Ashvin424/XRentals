@@ -44,19 +44,6 @@ CREATE TABLE rooms (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Room inquiries table
-CREATE TABLE room_inquiries (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    room_id INT NOT NULL,
-    user_id INT NOT NULL,
-    message TEXT NOT NULL,
-    status ENUM('Pending', 'Responded', 'Closed') DEFAULT 'Pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- Room reviews table
 CREATE TABLE room_reviews (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -65,17 +52,6 @@ CREATE TABLE room_reviews (
     rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
     review TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Room favorites table
-CREATE TABLE room_favorites (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    room_id INT NOT NULL,
-    user_id INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE KEY unique_favorite (room_id, user_id),
     FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -97,7 +73,6 @@ CREATE INDEX idx_rooms_location ON rooms(location);
 CREATE INDEX idx_rooms_price ON rooms(price);
 CREATE INDEX idx_rooms_type ON rooms(room_type);
 CREATE INDEX idx_rooms_status ON rooms(status);
-CREATE INDEX idx_inquiries_status ON room_inquiries(status);
 CREATE INDEX idx_reviews_rating ON room_reviews(rating);
 
 -- Insert sample admin user
@@ -111,4 +86,4 @@ VALUES
 300.00, 'University Area', 'Single Room', 'Semi Furnished', 'Attached', true, true),
 
 (1, 'Modern 2BHK Apartment', 'Spacious 2BHK apartment with modern amenities and great city views.', 
-800.00, 'City Center', '2BHK', 'Fully Furnished', 'Attached', true, true); 
+800.00, 'City Center', '2BHK', 'Fully Furnished', 'Attached', true, true);
