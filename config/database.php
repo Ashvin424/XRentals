@@ -1,11 +1,8 @@
 <?php
-// Database configuration
-define('DB_SERVER', '127.0.0.1');  // Using IP address instead of localhost
-define('DB_PORT', 3306);
+define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');  // Keep empty for default XAMPP setup
+define('DB_PASSWORD', '');
 define('DB_NAME', 'xrentals');
-
 // Enable error reporting
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
